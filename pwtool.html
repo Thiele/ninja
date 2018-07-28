@@ -1,0 +1,44 @@
+        <input id="password" type="text" placeholder="Password" value="Password12"> 
+        <input id="btn-gen" type="button" value="Run once">
+		<p>
+            <strong>Or</strong>
+        </p>
+		Run <input type="text" id="run-multiple-times" size="1" value="41"> times. <input id="run-multiple" type="button" value="Run">
+		<br>
+		<p><strong>Allowed characters: </strong><span id="chars">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!+#.%&amp;/()=?_",;|:-'&lt;&gt;</span></p>
+		<script>
+			var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!+#.%&/()=?_\",;|:-'<>";
+			function createNewPassword(password, rotations){
+				var base = 5;
+				var rot = rotations > 0 ?  modPow(base, rotations, chars.length) : 0;
+				var newpw = "";
+				for(var i = 0; i < password.length; i++){
+					var ch = password.charAt(i);
+					if(chars.indexOf(ch) >= 0) newpw = newpw + chars.charAt((chars.indexOf(ch)+modPow(rot, i+1, chars.length))%chars.length);
+					else newpw = newpw + ch;
+				}
+				return newpw;
+			}
+			
+			function modPow(num, power, mod){
+				if(power <= 0 && num > 0) return 1;
+				else if(power <= 0 && num == 0) return 0;
+				else return num * modPow(num, power-1, mod) % mod;
+			}
+			
+			$(document).ready(function(){
+				$("#btn-gen").click(function(){
+					var newpw = createNewPassword($("#password").val(), 1);
+					$("#password").val(newpw);
+				});
+				$("#run-multiple").click(function(){
+					var num = parseInt($("#run-multiple-times").val());
+					var newpw = $("#password").val();
+					for(var i = 0; i < num; i++){
+						newpw = createNewPassword(newpw, 1);
+					}
+					$("#password").val(newpw);
+				});
+				$("#chars").text(chars);
+			});
+        </script>

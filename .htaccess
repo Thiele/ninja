@@ -1,0 +1,10 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule ^ml/?$ index.php?page=ml [NC]
+RewriteRule ^home/?$ index.php?page=home [NC]
+RewriteRule ^pwtool/?$ index.php?page=pwtool [NC]
+
+#Basic rules. If nothing set, go to home, and block all direct html file access
+RewriteRule ^$ index.php?page=home [NC]
+RewriteRule ^(.*)\.html$ index.php?page=home
