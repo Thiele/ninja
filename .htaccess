@@ -1,6 +1,10 @@
 Options +FollowSymlinks
 RewriteEngine on
 
+#Force HTTPS and www prefix
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://www.thiele.ninja/$1 [R,L]
+
 RewriteRule ^ml/?$ index.php?page=ml [NC]
 RewriteRule ^home/?$ index.php?page=home [NC]
 RewriteRule ^pwtool/?$ index.php?page=pwtool [NC]
