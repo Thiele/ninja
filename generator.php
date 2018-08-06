@@ -60,6 +60,9 @@
         table.spaced-table td{
             padding: 20px;
         }
+        p.intro-text{
+            font-size: 1.2em;
+        }
     </style>
 <?php
     if($customHeaderHTML != null){
