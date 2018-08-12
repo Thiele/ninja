@@ -9,9 +9,9 @@
         </p>
 		Run <input type="text" id="run-multiple-times" size="1" value="41"> times. <input id="run-multiple" type="button" value="Run">
 		<br>
-		<p><strong>Allowed characters: </strong><span id="chars">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!+#.%&amp;/()=?_",;|:-'&lt;&gt;</span></p>
+		<p><strong>Allowed characters: </strong><span id="chars"></span></p>
 		<script>
-			var chars = ">b'On%o\"t9yuJvl0pr(F#Rj:)4cAdU/Gq+6;Ni27|VHh<-XQ=&kfI.wsD5g!,8ECK1aSB3TPYW_emZLx?zM";
+			var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!+#.%&/()=?_\",;|:-'<>";
 			function createNewPassword(password, rotations){
 				var base = 5;
 				var rot = rotations > 0 ?  modPow(base, rotations, chars.length) : 0;
@@ -43,5 +43,6 @@
 					}
 					$("#password").val(newpw);
 				});
+                $("#chars").text(chars);
 			});
         </script>
