@@ -8,6 +8,7 @@ RewriteRule ^(.*)$ https://www.thiele.ninja/$1 [R,L]
 RewriteRule ^ml/?$ index.php?page=ml [NC]
 RewriteRule ^home/?$ index.php?page=home [NC]
 RewriteRule ^pwtool/?$ index.php?page=pwtool [NC]
+RewriteRule ^ulam/?$ index.php?page=ulam [NC]
 
 #Basic rules. If nothing set, go to home, and block all direct html file access
 RewriteRule ^$ index.php?page=home [NC]

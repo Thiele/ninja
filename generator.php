@@ -78,7 +78,9 @@
         <span class="spacer">&nbsp;|&nbsp;</span>
         <a href="/ml/"<?php echo ($page == "ml" ? 'class="activepage"' : '');?>>ML</a> 
         <span class="spacer">&nbsp;|&nbsp;</span>
-        <a href="/pwtool/"<?php echo ($page == "pwtool" ? 'class="activepage"' : '');?>>Password obfuscator</a> 
+        <a href="/pwtool/"<?php echo ($page == "pwtool" ? 'class="activepage"' : '');?>>Password obfuscator</a>
+        <span class="spacer">&nbsp;|&nbsp;</span>
+        <a href="/ulam/"<?php echo ($page == "ulam" ? 'class="activepage"' : '');?>>Ulam spiral</a>
     </nav>
     <div id="content">
 <?php echo $content; ?>
