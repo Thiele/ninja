@@ -17,6 +17,7 @@
         body a{
             font-weight: bolder;
             text-decoration: none;
+            color: rgb(83, 46, 146);
         }
         #content {
             padding: 1.5em;
